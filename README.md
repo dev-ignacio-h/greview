@@ -1,5 +1,6 @@
 # greview
 Blog de juegos desarrollado con Django
+
 Proyecto creado con python 3.8 y django version 2.2.6
 
 Instalar las siguientes librerías:
