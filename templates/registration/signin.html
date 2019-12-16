@@ -1,0 +1,36 @@
+{% extends 'base.html' %} {% load crispy_forms_tags %} {% block content %}
+<div>
+    <br>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-10 col-center">
+      <div class="panel panel-primary ">
+        <div class="panel-heading">
+          <h3 class="panel-title">Registro de usuario</h3>
+        </div>
+          <div class="panel-body">
+            <form action="" method="POST">
+              {% csrf_token %} {{ form | crispy }}
+              
+              <div class="text-right mb-5">
+                <input
+                  type="reset"
+                  value="Limpiar"
+                  class="btn btn-secondary btn-sm"
+                />
+                <input
+                  type="submit"
+                  value="Registar"
+                  class="btn btn-primary btn-sm ml-auto"
+                />
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    
+  </div>
+</div>
+
+{% endblock %}

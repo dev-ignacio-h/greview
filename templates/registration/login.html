@@ -1,0 +1,32 @@
+{% extends 'base.html' %} {% load crispy_forms_tags %} {% block content %}
+<div><br /><br /><br /></div>
+<div  id="main"class="container">
+  <div class="row">
+    <div class="col-xs-6 col-center">
+      <div class="panel panel-primary ">
+        <div class="panel-heading">
+          <h3 class="panel-title">Autenticación</h3>
+        </div>
+        <div class="panel-body">
+          <form class="form-signin" action="" method="POST">
+            {% csrf_token %} {{ form | crispy }}
+           
+            <div class="text-right">
+                
+              <input
+                type="submit"
+                value="Iniciar sesión"
+                class="btn btn-primary btn-block"
+              />
+              
+            </div>
+            
+          </form>
+        </div>
+        <br />
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

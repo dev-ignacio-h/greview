@@ -1,0 +1,126 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>G-Review</title>
+    <link
+      rel="icon"
+      href="{% static 'images/discordicon.png' %}"
+      type="image/png"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Fjalla+One|Source+Sans+Pro&display=swap"
+      rel="stylesheet"
+    />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!--Link y script del Slide-->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="{% static 'css/estilos.css' %}" />
+    
+  </head>
+
+  <body>
+    <!-- <i class="icon-menu burguer-button" id="burger-menu"></i> -->
+    <header class="header">
+      <div class="container">
+        <figure class="logo">
+          <img
+            src="{% static 'images/logo.png' %}"
+            height="50"
+            alt="Logo de G-Review"
+          />
+        </figure>
+        <nav>
+          <ol>
+            <li>
+              <a class="link" href="{% url 'home' %}">Inicio</a>
+            </li>
+            <li>
+              <a class="link" href="#noticias">Categorías</a>
+            </li>
+            <li>
+              <a class="link" href="#analisis">Análisis</a>
+            </li>
+            {% if user.is_authenticated %}
+            <li class="nav-item active">
+              <a class="link" href="#">Bienvenido {{ user.username }}</a>
+            </li>
+            <li class="nav-item active">
+              <a href="{% url 'logout' %}" class="nav-link">Cerrar sesión</a>
+            </li>
+            {% else %}
+            <li class="nav-item active">
+              <a href="{% url 'login' %}" class="link">Iniciar sesión</a>
+            </li>
+            <li class="nav-item active">
+              <a href="{% url 'signin' %}" class="nav-link">Registrar</a>
+            </li>
+            {% endif %}
+          </ol>
+        </nav>
+      </div>
+    </header>
+    <div >
+      {% block content %} {% endblock %}
+    </div>
+    <section id="contacto" class="footer">
+      <div class="container">
+        <form action="/suscripcion/" class="form-email">
+          <h3>Suscríbete a nuestro boletín</h3>
+          <input type="text" placeholder="      Déjanos tu e-mail" id="email" />
+
+          <button>Enviar</button>
+        </form>
+        <div class="social">
+          <a
+            href="{{ socials.twitter }}"
+            target="_blank"
+            class="social-link twitter"
+          ></a>
+          <a
+            href="{{ socials.facebook }}"
+            target="_blank"
+            class="social-link facebook"
+          ></a>
+          <a
+            href="{{ socials.instagram }}"
+            target="_blank"
+            class="social-link instagram"
+          ></a>
+        </div>
+      </div>
+    </section>
+    <footer class="footer">
+      <div class="container">
+        <div>
+          <p>
+            &#169; 2019
+            <img
+              src="{% static 'images/logo.png' %}"
+              width="80"
+              alt="greview"
+            />
+          </p>
+        </div>
+        <div>
+          <p>
+            Diseñado por
+            <img
+              src="{% static 'images/logo.png' %}"
+              width="80"
+              alt="greview"
+            />
+          </p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,140 @@
+{% extends 'base.html' %}
+
+{% load staticfiles %}
+
+{% block content %}
+
+<div class="carrusel">
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <!--Indicadores-->
+        <ol class="carousel-indicators">
+            <li data-tarjet="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-tarjet="#myCarousel" data-slide-to="1"></li>
+            <li data-tarjet="#myCarousel" data-slide-to="2"></li>
+        </ol>
+
+        <!--Las imagenes-->
+        <div class="carousel-inner" style="width:100%">
+            <div class="item active">
+                <img src="{% static 'images/slide-wow.jpg' %}" alt="Wow Classic" style="width: 100%">
+                <div class="carousel-caption">
+                    <h3>¡Prepárate para el Wow Classic!</h3>
+
+                </div>
+            </div>
+
+            <div class="item">
+                <img src="{% static 'images/slide-bfv.jpg' %}" alt="Imagen Battlefield 5" style="width: 100%">
+                <div class="carousel-caption">
+                    <h3>Battlefield V: Un buen juego que le hace la guerra a los Bugs</h3>
+
+                </div>
+            </div>
+
+            <div class="item">
+                <img src="{% static 'images/slide-hn.jpg' %}" alt="Hollow Knight" style="width: 100%">
+                <div class="carousel-caption">
+                    <h3>Hollow Knight. Una encantadora aventura a través de la oscuridad</h3>
+
+                </div>
+            </div>
+        </div>
+
+        <!--Controles, ir izquierda y derecha-->
+        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+            <span class="sr-only">Anterior</span>
+        </a>
+        <a class="right carousel-control" href="#myCarousel" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right"></span>
+            <span class="sr-only">Siguiente</span>
+        </a>
+    </div>
+
+</div>
+<!-- 		Aquí termina el  slide -->
+
+</div>
+<section id="noticias" class="notices">
+    
+    <div class="container">        
+        <article class="news">
+            <div class="news-details">
+                <h3 class="news-title">{{ principal.title }}</h3>
+                <h6 class="news-subtitle">Categoría: {{ principal.category }}</h6>
+                <h6 class="news-subtitle">Autor: {{ principal.author }}</h6>
+                <p class="news-date"><small>{{ principal.pub_date }}</small></p>
+                <p class="news-description">{{ principal.description }}<a href="noticia.html">Ver Más...</a></p>
+            </div>
+            <figure class="news-imageContainer">
+                
+                <img class="news-image" src="{{ principal.reference_image.url }}" alt="imagen de {{ principal.slug }}" width="500">
+            </figure>
+        </article>
+        <article class="news">
+                <div class="news-details">
+                    <h3 class="news-title">{{ post1.title }}</h3>
+                    <h6 class="news-subtitle">Categoría: {{ post1.category }}</h6>
+                    <h6 class="news-subtitle">Autor: {{ post1.author }}</h6>
+                    <p class="news-date"><small>{{ post1.pub_date }}</small></p>
+                    <p class="news-description">{{ post1.description }}<a href="noticia.html">Ver Más...</a></p>
+                </div>
+                <figure class="news-imageContainer">
+                    
+                    <img class="news-image" src="{{ post1.reference_image.url }}" alt="imagen de {{ post1.slug }}" width="500">
+                </figure>
+            </article>
+    </div>
+</section>
+
+
+
+<section id="analisis" class="article-list">
+  
+    
+    <div class="container">
+        
+        <article class="article">
+            <figure class="article-imageContainer">
+                <img class="article-image" src="{{ post2.reference_image.url }}" width="500" alt="imagen de {{ post2.slug }}">
+            </figure>
+            <div class="article-detail">
+                <h3 class="article-title">{{ post2.title }}</h3>
+                <p class="article-description">{{ post2.description}}</p>
+                <a class="article-url" href="#" target="_blank">Ver Análisis</a>
+            </div>
+        </article>
+        <article class="article">
+            <figure class="article-imageContainer">
+                <img class="article-image" src="{{ post3.reference_image.url }}" width="500" alt="imagen de {{ post3.slug }}">
+            </figure>
+            <div class="article-detail">
+                <h3 class="article-title">{{ post3.title }}</h3>
+                <p class="article-description">{{ post3.description}}</p>
+                <a class="article-url" href="#" target="_blank">Ver Análisis</a>
+            </div>
+        </article>
+        <article class="article">
+            <figure class="article-imageContainer">
+                <img class="article-image" src="{{ post4.reference_image.url }}" width="500" alt="imagen de {{ post4.slug }}">
+            </figure>
+            <div class="article-detail">
+                <h3 class="article-title">{{ post4.title }}</h3>
+                <p class="article-description">{{ post4.description}}</p>
+                <a class="article-url" href="#" target="_blank">Ver Análisis</a>
+            </div>
+        </article>
+        <article class="article">
+            <figure class="article-imageContainer">
+                <img class="article-image" src="{{ post5.reference_image.url }}" width="500" alt="imagen de {{ post5.slug }}">
+            </figure>
+            <div class="article-detail">
+                <h3 class="article-title">{{ post5.title }}</h3>
+                <p class="article-description">{{ post5.description}}</p>
+                <a class="article-url" href="#" target="_blank">Ver Análisis</a>
+            </div>
+        </article>
+    </div>
+</section>
+
+{% endblock %}
