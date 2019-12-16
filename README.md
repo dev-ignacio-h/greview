@@ -1,5 +1,5 @@
 # greview
-Blog de juegos desarrollado con Django
+Blog de juegos desarrollado con Django y api
 
 Proyecto creado con python 3.8 y django version 2.2.6
 
