@@ -45,15 +45,12 @@
             </li>
             <li>
               <a class="link" href="#noticias">Categorías</a>
+            </li>           
+            <li>
+              <a class="link" href="{% url 'indicadores' %}">Indicadores Económicos (API)</a>
             </li>
             <li>
-              <a class="link" href="#analisis">Análisis</a>
-            </li>
-            <li>
-              <a class="link" href="#indicadores">Indicadores Económicos</a>
-            </li>
-            <li>
-              <a class="link" href="#pokedex">Pokédex</a>
+              <a class="link" href="{% url 'pokemons' %}">Pokédex (API)</a>
             </li>
             
             {% if user.is_authenticated %}
@@ -81,8 +78,8 @@
     </header>
     
     <!--API indicadores economicos-->
-    <!--
-    <p class="text-center">Indicadores Económicos API</p>
+    
+    <!-- <p class="text-center">Indicadores Económicos API</p>
     <div class="container my-5 text-center">
       <div class="mt-5">
           <table class="table table-dark">
@@ -100,18 +97,18 @@
       </div>
 
       <script src="../static/js/indicadores.js"></script>
-      <script>traer()</script>
-      -->
+      <script>traer()</script> -->
+      
 
       <!--API pokemon-->
       
-      <p class="text-center">Pokédex API</p>
+<!--       <p class="text-center">Pokédex API</p>
       <div class="container">
         <h1>Pokedex</h1>
         <ul id="pokedex"></ul>
     </div>
       <script src="../static/js/pokeapi.js"></script>
-      <script>fetchPokemon()</script>
+      <script>fetchPokemon()</script> -->
       
     <div >
       {% block content %} {% endblock %}
@@ -167,5 +164,7 @@
         </div>
       </div>
     </footer>
+
+    <script src="{% static 'js/indicadores.js' %}"></script>
   </body>
 </html>

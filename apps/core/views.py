@@ -78,6 +78,12 @@ def signin(request):
             return redirect(to='home')
     return render(request, 'registration/signin.html', data)
 
+def indicadores(request):
+    return render(request, 'indicadores.html')
+
+def pokemons(request):
+    return render(request, 'pokemons.html')
+
 
 
 # Create your views here.
