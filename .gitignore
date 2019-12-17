@@ -1,5 +1,2 @@
-<<<<<<< HEAD
 *.pyc
-=======
-*.pyc
->>>>>>> desarrollo-blog
+greview/db.sqlite3
