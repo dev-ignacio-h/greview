@@ -1,11 +1,8 @@
 from django.urls import path, include
 from .views import Home, signin, AuthorViewSet
 from django.urls import path
-<<<<<<< HEAD
-from .views import Home, signin, CategoryList, indicadores, pokemons
-=======
-from .views import Home, signin, CategoryList, AdventureList, StrategyList, WarList, RaceList, MMORPGList
->>>>>>> desarrollo-blog
+
+from .views import Home, signin, CategoryList, AdventureList, StrategyList, WarList, RaceList, MMORPGList, indicadores, pokemons
 from . import views
 from rest_framework import routers
 
