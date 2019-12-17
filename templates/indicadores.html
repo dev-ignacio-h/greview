@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% load staticfiles %}
+
+{% block content %}
+
+
+<div id="main" onload="traer()" class="container my-5 text-center">
+
+    <h3>Indicadores Económicos obtenidos desde la api del Banco Central</h3>
+    <br>
+    <!-- <br>
+    <button class="btn btn-secondary mt-5" onclick="traer()">Obtener Datos Económicos desde el banco Central</button>
+    <br> <br> -->
+    <div class="mt-5">
+        <table class="table table-dark">
+            <thead>
+                <tr>
+                    <th scope="col">Código</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Unidad_medida</th>
+                    <th scope="col">Fecha</th>
+                    <th scope="col">Valor</th>
+                </tr>
+            </thead>
+            <tbody id="contenido">
+
+            </tbody>
+        </table>
+        <script src="../static/js/indicadores.js"></script>
+        <script>
+          traer();
+        </script>
+    </div>
+    
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends 'base.html' %} {% load staticfiles %} {% block content %}
+
+<div id="main" class="container my-5 text-center">
+  
+  <div class="">
+    <h3 class="text-center">Pokemones obtenidos desde Pokédex API</h3>
+    <div class="container">
+      
+      <ul id="pokedex"></ul>
+    </div>
+    <script src="../static/js/pokeapi.js"></script>
+    <script>
+      fetchPokemon();
+    </script>
+    
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,36 @@
+[33mcommit a26cc48115fefc1088f23aa066959a150f8c5cc6[m[33m ([m[1;36mHEAD -> [m[1;32mdesarrollo-blog[m[33m, [m[1;31morigin/desarrollo-blog[m[33m)[m
+Author: joslazcano <jos.lazcano@alumnos.duoc.cl>
+Date:   Tue Dec 17 13:36:25 2019 -0300
+
+    Construccion de pestaña categoria Lista
+
+[33mcommit d59eb365bcd633cf040b6904e5eab47ecd65ae61[m
+Author: joslazcano <jos.lazcano@alumnos.duoc.cl>
+Date:   Tue Dec 17 13:22:42 2019 -0300
+
+    Correcion listado de Categorias y añadido pestaña de Categoria
+
+[33mcommit 954b53dd399845c2ff7acf3d90809945f8f3b16b[m
+Author: joslazcano <jos.lazcano@alumnos.duoc.cl>
+Date:   Tue Dec 17 00:31:07 2019 -0300
+
+    .gitignore funcionando correctamente
+
+[33mcommit 592c044f4687509f5248053a205261efbc9b7a97[m[33m ([m[1;31morigin/desarrollo-api[m[33m, [m[1;31morigin/consumo-api[m[33m)[m
+Merge: 51d84ab 0ac42d1
+Author: dev-ignacio-h <dev.henriquez.h@gmail.com>
+Date:   Sun Dec 15 22:10:35 2019 -0300
+
+    Merge branch 'master' of https://github.com/dev-ignacio-h/greview
+
+[33mcommit 51d84abc76bf6a671ce683d91950e4f70d70a3be[m
+Author: dev-ignacio-h <dev.henriquez.h@gmail.com>
+Date:   Sun Dec 15 22:06:09 2019 -0300
+
+    commit inicial blog con django ET
+
+[33mcommit 0ac42d1f2e34564a82f9c00f573d172bd15c5474[m
+Author: dev-ignacio-h <55958716+dev-ignacio-h@users.noreply.github.com>
+Date:   Sun Dec 15 22:04:40 2019 -0300
+
+    Initial commit

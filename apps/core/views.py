@@ -1,6 +1,7 @@
 import random 
 from django.shortcuts import render, redirect
 from django.contrib import messages
+from django.core.paginator import Paginator
 from django.urls import reverse
 from django.template import loader
 from django.views.generic import ListView
@@ -24,6 +25,12 @@ def consulta(id):
 def consultaCategoria(name):
     try:
         return Category.objects.get(name = name)
+    except:
+        return None
+
+def consultaCategoriaJuego(category):
+    try:
+        return Posts.objects.get(category = category)
     except:
         return None
 
@@ -100,6 +107,131 @@ class CategoryList(ListView):
         }
         return render(request, 'categoria.html', context)
 
+#Genero Aventura
+class AdventureList(ListView):
+    def get(self, request, *args, **kwargs):
+        posts_adventure = Post.objects.filter(
+            state = True,
+            published = True,
+            category = Category.objects.get(name = 'Aventura')
+        )
+        try:
+            category = Category.objects.get(name = 'Aventura')
+        except:
+            category = None
+
+        paginator = Paginator(posts_adventure, 4)
+        pagina = request.GET.get('page')
+        posts =paginator.get_page(pagina)
+    
+        context = {
+            'posts': posts,
+            'socials': getNetworks(),
+            'web': getWeb(),
+            'category' : category,
+        }
+        return render(request, 'genero.html', context)
+
+#Genero Estrategia
+class StrategyList(ListView):
+    def get(self, request, *args, **kwargs):
+        posts_strategy = Post.objects.filter(
+            state = True,
+            published = True,
+            category = Category.objects.get(name = 'Estrategia')
+        )
+        try:
+            category = Category.objects.get(name = 'Estrategia')
+        except:
+            category = None
+
+        paginator = Paginator(posts_strategy, 4)
+        pagina = request.GET.get('page')
+        posts =paginator.get_page(pagina)
+    
+        context = {
+            'posts': posts,
+            'socials': getNetworks(),
+            'web': getWeb(),
+            'category' : category,
+        }
+        return render(request, 'genero.html', context)
+
+#Genero Acción Bélica
+class WarList(ListView):
+    def get(self, request, *args, **kwargs):
+        posts_war = Post.objects.filter(
+            state = True,
+            published = True,
+            category = Category.objects.get(name = 'Acción Bélica')
+        )
+        try:
+            category = Category.objects.get(name = 'Acción Bélica')
+        except:
+            category = None
+
+        paginator = Paginator(posts_war, 4)
+        pagina = request.GET.get('page')
+        posts =paginator.get_page(pagina)
+    
+        context = {
+            'posts': posts,
+            'socials': getNetworks(),
+            'web': getWeb(),
+            'category' : category,
+        }
+        return render(request, 'genero.html', context)
+
+#Género Carreras
+class RaceList(ListView):
+    def get(self, request, *args, **kwargs):
+        posts_race = Post.objects.filter(
+            state = True,
+            published = True,
+            category = Category.objects.get(name = 'Carreras')
+        )
+        try:
+            category = Category.objects.get(name = 'Carreras')
+        except:
+            category = None
+
+        paginator = Paginator(posts_race, 4)
+        pagina = request.GET.get('page')
+        posts =paginator.get_page(pagina)
+    
+        context = {
+            'posts': posts,
+            'socials': getNetworks(),
+            'web': getWeb(),
+            'category' : category,
+        }
+        return render(request, 'genero.html', context)
+
+#Genero MMORPG
+class MMORPGList(ListView):
+    def get(self, request, *args, **kwargs):
+        posts_mmorpg = Post.objects.filter(
+            state = True,
+            published = True,
+            category = Category.objects.get(name = 'MMORPG')
+        )
+        try:
+            category = Category.objects.get(name = 'MMORPG')
+        except:
+            category = None
+
+        paginator = Paginator(posts_mmorpg, 4)
+        pagina = request.GET.get('page')
+        posts =paginator.get_page(pagina)
+    
+        context = {
+            'posts': posts,
+            'socials': getNetworks(),
+            'web': getWeb(),
+            'category' : category,
+        }
+        return render(request, 'genero.html', context)
+
 def signin(request):
     data = {
         'form': CustomUserForm()
@@ -124,3 +256,12 @@ class AuthorViewSet(viewsets.ModelViewSet):
     serializer_class = AuthorSerializer
 
 
+def indicadores(request):
+    return render(request, 'indicadores.html')
+
+def pokemons(request):
+    return render(request, 'pokemons.html')
+
+
+
+# Create your views here.
