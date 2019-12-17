@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load staticfiles%}
+{% block title%} {{category}} | G-Review {% endblock title%}
+
+{% block content %}
+<section id="noticias" class="notices">
+    
+    <div class="container">       
+        {% for post in posts %}
+        
+        <article class="news">
+            <div class="news-details">
+                <h3 class="news-title">{{ post.title }}</h3>
+                <h6 class="news-subtitle">Categoría: {{ post.category }}</h6>
+                <h6 class="news-subtitle">Autor: {{ post.author }}</h6>
+                <p class="news-date"><small>{{ post.pub_date }}</small></p>
+                <p class="news-description">{{ post.description }}<a href="noticia.html">Ver Más...</a></p>
+            </div>
+            <figure class="news-imageContainer">
+                <img class="news-image" src="{{ post.reference_image.url }}" alt="imagen de {{ post.slug }}" width="500">
+            </figure>
+        </article>
+        {% endfor %}
+        
+    </div>
+</section>
+
+{% endblock content %}
