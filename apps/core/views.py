@@ -4,7 +4,7 @@ from django.contrib import messages
 from django.urls import reverse
 from django.template import loader
 from django.views.generic import ListView
-from .models import Post, SocialNetworks, Web
+from .models import Post, SocialNetworks, Web, Category
 from .forms import CustomUserForm
 from django.contrib.auth import login, authenticate
 from django.contrib.auth.decorators import login_required
@@ -13,6 +13,12 @@ def consulta(id):
 
     try:
         return Post.objects.get(id = id)
+    except:
+        return None
+
+def consultaCategoria(name):
+    try:
+        return Category.objects.get(name = name)
     except:
         return None
 
@@ -60,6 +66,34 @@ class Home(ListView):
                         
         }
         return render(request, 'home.html', context)
+
+
+class CategoryList(ListView):
+    def get(self, request, *args, **kwargs):
+        categories = list(Category.objects.filter(
+            state = True,
+            ).values_list('name'))
+
+        adventure = Category.objects.get(name = 'Aventura')
+
+        strategy = Category.objects.get(name = 'Estrategia')
+
+        war = Category.objects.get(name = 'Acción Bélica')
+
+        race = Category.objects.get(name = 'Carreras')
+
+        mmorpg = Category.objects.get(name = 'MMORPG')
+
+        context = {
+            'adventure': consultaCategoria(adventure),
+            'strategy': consultaCategoria(strategy),
+            'war': consultaCategoria(war),
+            'race': consultaCategoria(race),
+            'mmorpg': consultaCategoria(mmorpg),
+            'socials': getNetworks(),
+            'web': getWeb(),
+        }
+        return render(request, 'categoria.html', context)
 
 def signin(request):
     data = {

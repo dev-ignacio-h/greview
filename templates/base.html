@@ -4,7 +4,7 @@
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <title>{% block title %}G-Review{s% endblock title %}</title>
+    <title>{% block title %}G-Review{% endblock title %}</title>
     <link
       rel="icon"
       href="{% static 'images/discordicon.png' %}"
@@ -44,7 +44,7 @@
               <a class="link" href="{% url 'home' %}">Inicio</a>
             </li>
             <li>
-              <a class="link" href="#noticias">Categorías</a>
+              <a class="link" href="{% url 'category' %}">Categorías</a>
             </li>
             <li>
               <a class="link" href="#analisis">Análisis</a>
