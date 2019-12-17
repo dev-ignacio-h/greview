@@ -22,6 +22,18 @@ def consultaCategoria(name):
     except:
         return None
 
+def consultaCategoriaJuego(category):
+    try:
+        return Posts.objects.get(category = category)
+    except:
+        return None
+
+def consultaCategoriaJuego(category):
+    try:
+        return Posts.objects.get(category = category)
+    except:
+        return None
+
 def getNetworks():
     return SocialNetworks.objects.filter(state = True).latest('creation_date')
 
@@ -94,6 +106,27 @@ class CategoryList(ListView):
             'web': getWeb(),
         }
         return render(request, 'categoria.html', context)
+
+class AdventureList(ListView):
+    def get(self, request, *args, **kwargs):
+        posts_adventure = Post.objects.filter(
+            state = True,
+            published = True,
+            category = Category.object.get(name ='Aventura')
+        )
+    try:
+        category = Category.object.get(name = 'Aventura')
+    except:
+        category = None
+
+        posts_adventure = consultaCategoriaJuego(category)
+    context = {
+
+        'posts_adventure': posts_adventure,
+        'socials': getNetworks(),
+        'web': getWeb(),
+        'category' : category,
+    }
 
 def signin(request):
     data = {
