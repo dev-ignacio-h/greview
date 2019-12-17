@@ -124,3 +124,12 @@ class AuthorViewSet(viewsets.ModelViewSet):
     serializer_class = AuthorSerializer
 
 
+def indicadores(request):
+    return render(request, 'indicadores.html')
+
+def pokemons(request):
+    return render(request, 'pokemons.html')
+
+
+
+# Create your views here.
