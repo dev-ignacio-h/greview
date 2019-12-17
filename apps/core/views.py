@@ -4,10 +4,15 @@ from django.contrib import messages
 from django.urls import reverse
 from django.template import loader
 from django.views.generic import ListView
-from .models import Post, SocialNetworks, Web, Category
+from .models import Post, SocialNetworks, Web, Author, Category
 from .forms import CustomUserForm
 from django.contrib.auth import login, authenticate
 from django.contrib.auth.decorators import login_required
+
+#rest_framework
+
+from rest_framework import viewsets
+from .serializers import AuthorSerializer
 
 def consulta(id):
 
@@ -145,4 +150,10 @@ def signin(request):
             return redirect(to='home')
     return render(request, 'registration/signin.html', data)
 
-# Create your views here.
+# viewsets
+
+class AuthorViewSet(viewsets.ModelViewSet):
+    queryset = Author.objects.all()
+    serializer_class = AuthorSerializer
+
+
