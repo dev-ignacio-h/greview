@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block title %} Categorias | G-Review {% endblock title %}
+
+{% block content %}
+
+<section id="analisis" class="article-list">
+ 
+    <div class="container">
+        
+        <article class="article">
+            <figure class="article-imageContainer">
+                <img class="article-image" src="{{ adventure.reference_image.url }}" width="500" alt="imagen de {{ adventure.slug }}">
+            </figure>
+            <div class="article-detail">
+                <h3 class="article-title">{{ adventure.name }}</h3>
+                <a class="article-url" href="#" target="_blank">Ver Categoría</a>
+            </div>
+        </article>
+        <article class="article">
+            <figure class="article-imageContainer">
+                <img class="article-image" src="{{ strategy.reference_image.url }}" width="500" alt="imagen de {{ strategy.slug }}">
+            </figure>
+            <div class="article-detail">
+                <h3 class="article-title">{{ strategy.name }}</h3>
+                <a class="article-url" href="#" target="_blank">Ver Categoría</a>
+            </div>
+        </article>
+        <article class="article">
+            <figure class="article-imageContainer">
+                <img class="article-image" src="{{ war.reference_image.url }}" width="500" alt="imagen de {{ war.slug }}">
+            </figure>
+            <div class="article-detail">
+                <h3 class="article-title">{{ war.name }}</h3>
+                <a class="article-url" href="#" target="_blank">Ver Categoría</a>
+            </div>
+        </article>
+        <article class="article">
+            <figure class="article-imageContainer">
+                <img class="article-image" src="{{ race.reference_image.url }}" width="500" alt="imagen de {{ race.slug }}">
+            </figure>
+            <div class="article-detail">
+                <h3 class="article-title">{{ race.name }}</h3>
+                <a class="article-url" href="#" target="_blank">Ver Categoría</a>
+            </div>
+        </article>
+        <article class="article">
+            <figure class="article-imageContainer">
+                <img class="article-image" src="{{ mmorpg.reference_image.url }}" width="500" alt="imagen de {{ mmorpg.slug }}">
+            </figure>
+            <div class="article-detail">
+                <h3 class="article-title">{{ mmorpg.name }}</h3>
+                <a class="article-url" href="#" target="_blank">Ver Categoría</a>
+            </div>
+        </article>
+    </div>
+</section>
+
+{% endblock content %}
