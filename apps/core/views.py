@@ -78,4 +78,6 @@ def signin(request):
             return redirect(to='home')
     return render(request, 'registration/signin.html', data)
 
+
+
 # Create your views here.
