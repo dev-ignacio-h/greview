@@ -1,7 +1,9 @@
 # greview
 Blog de juegos desarrollado con Django, contiene:
 
-* Api REST de autores de posts
+* Api REST de autores de posts:
+
+- /api/autores
 
 * Consumo de apis externas:
 
