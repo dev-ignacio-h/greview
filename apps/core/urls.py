@@ -1,7 +1,7 @@
 from django.urls import path, include
 from .views import Home, signin, AuthorViewSet
 from django.urls import path
-from .views import Home, signin, CategoryList, AdventureList, StrategyList, WarList, RaceList, MMORPGList
+from .views import Home, signin, CategoryList, AdventureList, StrategyList, WarList, RaceList, MMORPGList, PostDetail
 from . import views
 from rest_framework import routers
 
@@ -11,6 +11,7 @@ router.register('autores', AuthorViewSet)
 urlpatterns = [
     path('', Home.as_view(), name="home"),
     path('categoria/',CategoryList.as_view(), name="category"),
+    path('<slug:slug>/',PostDetail.as_view(),name="detalle_post"),
     path('aventura/',AdventureList.as_view(), name="aventura"),
     path('estrategia/',StrategyList.as_view(), name="estrategia"),
     path('accionbelica/',WarList.as_view(), name="accionbelica"),

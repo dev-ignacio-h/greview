@@ -4,7 +4,7 @@ from django.contrib import messages
 from django.core.paginator import Paginator
 from django.urls import reverse
 from django.template import loader
-from django.views.generic import ListView
+from django.views.generic import ListView, DetailView
 from .models import Post, SocialNetworks, Web, Author, Category
 from .forms import CustomUserForm
 from django.contrib.auth import login, authenticate
@@ -248,6 +248,22 @@ def signin(request):
             login(request, user)
             return redirect(to='home')
     return render(request, 'registration/signin.html', data)
+
+#Detalle de los Post
+class PostDetail(DetailView):
+    def get(self, request, slug, *args, **kwargs):
+        try:
+            post = Post.objects.get(slug = slug)
+        except:
+            post = None
+        
+        context = {
+            'post': post,
+            'sociales': getNetworks(),
+            'web': getWeb(),
+        }
+        return render(request, 'post.html', context)
+
 
 # viewsets
 

@@ -64,7 +64,7 @@
                 <h6 class="news-subtitle">Categoría: {{ principal.category }}</h6>
                 <h6 class="news-subtitle">Autor: {{ principal.author }}</h6>
                 <p class="news-date"><small>{{ principal.pub_date }}</small></p>
-                <p class="news-description">{{ principal.description }}<a href="noticia.html">Ver Más...</a></p>
+                <p class="news-description">{{ principal.description }}<a href="{% url 'detalle_post' principal.slug %}">Ver Más...</a></p>
             </div>
             <figure class="news-imageContainer">
                 
@@ -77,7 +77,7 @@
                     <h6 class="news-subtitle">Categoría: {{ post1.category }}</h6>
                     <h6 class="news-subtitle">Autor: {{ post1.author }}</h6>
                     <p class="news-date"><small>{{ post1.pub_date }}</small></p>
-                    <p class="news-description">{{ post1.description }}<a href="noticia.html">Ver Más...</a></p>
+                    <p class="news-description">{{ post1.description }}<a href="{% url 'detalle_post' post1.slug %}">Ver Más...</a></p>
                 </div>
                 <figure class="news-imageContainer">
                     
@@ -101,7 +101,7 @@
             <div class="article-detail">
                 <h3 class="article-title">{{ post2.title }}</h3>
                 <p class="article-description">{{ post2.description}}</p>
-                <a class="article-url" href="#" target="_blank">Ver Análisis</a>
+                <a class="article-url" href="{% url 'detalle_post' post2.slug %}" target="_blank">Ver Análisis</a>
             </div>
         </article>
         <article class="article">
@@ -111,7 +111,7 @@
             <div class="article-detail">
                 <h3 class="article-title">{{ post3.title }}</h3>
                 <p class="article-description">{{ post3.description}}</p>
-                <a class="article-url" href="#" target="_blank">Ver Análisis</a>
+                <a class="article-url" href="{% url 'detalle_post' post3.slug %}" target="_blank">Ver Análisis</a>
             </div>
         </article>
         <article class="article">
@@ -121,7 +121,7 @@
             <div class="article-detail">
                 <h3 class="article-title">{{ post4.title }}</h3>
                 <p class="article-description">{{ post4.description}}</p>
-                <a class="article-url" href="#" target="_blank">Ver Análisis</a>
+                <a class="article-url" href="{% url 'detalle_post' post4.slug %}" target="_blank">Ver Análisis</a>
             </div>
         </article>
         <article class="article">
@@ -131,7 +131,7 @@
             <div class="article-detail">
                 <h3 class="article-title">{{ post5.title }}</h3>
                 <p class="article-description">{{ post5.description}}</p>
-                <a class="article-url" href="#" target="_blank">Ver Análisis</a>
+                <a class="article-url" href="{% url 'detalle_post' post5.slug %}" target="_blank">Ver Análisis</a>
             </div>
         </article>
     </div>

@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block title %} {{post.title}} | G-Review {% endblock title %}
+
+{% block content %} 
+<div class="container" style="padding-top: 20;" >
+    <div>
+        <div class="news" style="display: block">
+            <h3 class="blog-title" style="font-size: 60px">{{post.title}}</h3>  
+            <p class="blog-post-meta" style="font-size: 20px">{{post.pub_date}}</p>
+            <p class="blog-post-meta"  style="font-size: 20px">Autor: {{post.author}}</p>
+            <img class="article-image" src="{{post.reference_image.url}} " style="width: 80%" alt="imagen de {{ post.slug }}">
+            <p class="lead blog-description">{{post.description}}</p>
+            <p style="font-size: 18px">{{post.content | safe}}</p>
+            
+            
+        </div>
+    </div>
+</div>
+{% endblock content %}
+
+
+
+
