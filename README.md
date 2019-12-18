@@ -3,12 +3,13 @@ Blog de juegos desarrollado con Django, contiene:
 
 * Api REST de autores de posts:
 
-- /api/autores
+  http://localhost:8000/api/autores/
 
 * Consumo de apis externas:
 
-- Banco Central
-- Pokemones 
+
+ Banco Central
+ Pokemones 
 
 
 Requerimientos del proyecto:
