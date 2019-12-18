@@ -1,7 +1,7 @@
 from django.urls import path, include
 from .views import Home, signin, AuthorViewSet
 from django.urls import path
-from .views import Home, signin, CategoryList, AdventureList, StrategyList, WarList, RaceList, MMORPGList, PostDetail
+from .views import Home, signin, CategoryList, AdventureList, StrategyList, WarList, RaceList, MMORPGList, PostDetail, indicadores, pokemons
 from . import views
 from rest_framework import routers
 
@@ -19,4 +19,7 @@ urlpatterns = [
     path('mmorpg',MMORPGList.as_view(), name="mmorpg"),
     path('signin/', views.signin, name="signin"),
     path('api/', include(router.urls)),
+    path('indicadores/', indicadores, name="indicadores"),
+    path('pokemons/', pokemons, name="pokemons"),
+    
 ]
