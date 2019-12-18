@@ -4,7 +4,7 @@ from django.contrib import messages
 from django.core.paginator import Paginator
 from django.urls import reverse
 from django.template import loader
-from django.views.generic import ListView
+from django.views.generic import ListView, DetailView
 from .models import Post, SocialNetworks, Web, Author, Category
 from .forms import CustomUserForm
 from django.contrib.auth import login, authenticate
@@ -231,6 +231,7 @@ class MMORPGList(ListView):
             'category' : category,
         }
         return render(request, 'genero.html', context)
+
 
 def signin(request):
     data = {
