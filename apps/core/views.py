@@ -250,6 +250,22 @@ def signin(request):
             return redirect(to='home')
     return render(request, 'registration/signin.html', data)
 
+#Detalle de los Post
+class PostDetail(DetailView):
+    def get(self, request, slug, *args, **kwargs):
+        try:
+            post = Post.objects.get(slug = slug)
+        except:
+            post = None
+        
+        context = {
+            'post': post,
+            'sociales': getNetworks(),
+            'web': getWeb(),
+        }
+        return render(request, 'post.html', context)
+
+
 # viewsets
 
 class AuthorViewSet(viewsets.ModelViewSet):
@@ -257,3 +273,12 @@ class AuthorViewSet(viewsets.ModelViewSet):
     serializer_class = AuthorSerializer
 
 
+def indicadores(request):
+    return render(request, 'indicadores.html')
+
+def pokemons(request):
+    return render(request, 'pokemons.html')
+
+
+
+# Create your views here.
